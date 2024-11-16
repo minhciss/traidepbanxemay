@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js" crossorigin="anonymous"></script>
+    <title>Chi Tiết Sản Phẩm</title>
+    <style>
+        /* Định dạng phần header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f8f8f8;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .header .left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .left img {
+            margin-right: 10px;
+        }
+
+        .header .left span, .header .right a {
+            margin: 0 8px;
+        }
+
+        .header .right a {
+            color: #333;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .header .right a:hover {
+            color: #e50914;
+        }
+
+        /* Định dạng thanh navbar */
+        .navbar {
+            background-color: #333;
+            padding: 10px;
+        }
+
+        .navbar .menubar ul {
+            list-style-type: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+
+        .navbar .menubar ul li {
+            margin: 0 10px;
+            position: relative;
+        }
+
+        .navbar .menubar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 8px 12px;
+        }
+
+        .navbar .menubar ul li a:hover {
+            background-color: #e50914;
+            border-radius: 4px;
+        }
+
+        /* Định dạng submenu dọc */
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%; /* Đặt submenu ngay dưới mục chính */
+            left: 0;
+            background-color: #444;
+            border-radius: 4px;
+            width: 200px; /* Đặt chiều rộng cho submenu */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .menubar ul li:hover .submenu {
+            display: block;
+        }
+
+        .submenu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .submenu ul li {
+            display: block; /* Đảm bảo các mục con nằm dọc */
+        }
+
+        .submenu ul li a {
+            color: #fff;
+            padding: 10px 16px;
+            display: block;
+            white-space: nowrap; /* Giữ submenu trong một dòng */
+        }
+
+        .submenu ul li a:hover {
+            background-color: #e50914;
+        }
+
+        /* Định dạng phần tiêu đề chính */
+        .main-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Định dạng thanh phân trang */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .pagination a {
+            color: #333;
+            padding: 8px 16px;
+            text-decoration: none;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+            border-radius: 4px;
+        }
+
+        .pagination a.active {
+            background-color: #e50914;
+            color: white;
+            border: 1px solid #e50914;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+        /* Định dạng phần bộ lọc */
+        .filter {
+            text-align: right;
+            margin: 10px 20px;
+        }
+
+        .filter select {
+            padding: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="left">
+            <img alt="Trai đẹp bán xe logo" height="40" src="../Đồ án xe máy/logo.jpg" width="40"/>
+            <span>Trai đẹp bán xe</span>
+            <span>|</span>
+            <span>19002145</span>
+            <span>|</span>
+            <span>traidepbanxe123@gmail.com</span>
+        </div>
+        <div class="right">
+            <a href="#">
+                <i class="fas fa-newspaper"></i> Tin Tức
+            </a>
+            <a href="#">
+                <i class="fas fa-phone"></i> Liên Hệ
+            </a>
+            <a href="#">
+                <i class="fas fa-user-plus"></i> Đăng Ký
+            </a>
+            <a href="#">
+                <i class="fas fa-sign-in-alt"></i> Đăng Nhập
+            </a>
+        </div>
+    </div>
+
+    <section class="navbar">
+        <div class="menubar">
+            <ul>
+                <li>
+                    <a href="#"><i class="fa-solid fa-bars"></i> DANH MỤC SẢN PHẨM</a>
+                    <div class="submenu">
+                        <ul>
+                            <li><a href="#">XE TAY GA</a></li>
+                            <li><a href="#">XE CÔN TAY</a></li>
+                            <li><a href="#">XE SỐ</a></li>
+                            <li><a href="#">XE NHẬP KHẨU</a></li>
+                            <li><a href="#">CÁC MẪU ĐANG GIẢM GIÁ</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">TRANG CHỦ</a></li>
+                <li><a href="#">GIỚI THIỆU</a></li>
+                <li><a href="#">TIN TỨC</a></li>
+                <li><a href="#">LIÊN HỆ</a></li>
+                <li><a href="#">ĐĂNG KÝ TRẢ GÓP</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Phần tiêu đề chính -->
+    <div class="main-title">
+        XE TAY GA
+    </div>
+
+    <!-- Phần thanh phân trang -->
+    <div class="pagination">
+        <a href="#">&laquo; Prev</a>
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">Next &raquo;</a>
+    </div>
+
+    <!-- Phần bộ lọc sắp xếp -->
+    <div class="filter">
+        <label for="sort">Sắp xếp:</label>
+        <select id="sort">
+            <option value="low-to-high">Giá từ thấp đến cao</option>
+            <option value="high-to-low">Giá từ cao đến thấp</option>
+        </select>
+    </div>
+</body>
+</html>
